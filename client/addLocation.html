@@ -1,0 +1,38 @@
+<template name="addLocation">
+  <div id="new-location">
+    <h2>Add new trash find</h2>
+    <table>
+      <tr>
+        <th><label for="location-description">description</label></th>
+        <td><input id="location-description" type="text" /></td>
+      </tr>
+      <tr>
+        <th><label for="location-type">type of spot</label></th>
+        <td>
+          <select id="location-type">
+            {{#each locationTypes}}
+            <option value="{{type}}">{{type}}</option>
+            {{/each}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="location-rating">rating</label></th>
+        <td>
+          <select id="location-rating">
+            {{#each ratingLevel}}
+            <option value="{{level}}">{{level}}</option>
+            {{/each}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="location-checked">last checked</label></th>
+        <td><input id="location-checked" type="text"></td>
+      </tr>
+      <tr>
+        <td></td><td><button id="add-location">add location</button></td>
+      </tr>
+    </table>
+  </div>
+</template>
