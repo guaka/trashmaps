@@ -95,12 +95,12 @@ mapSize = ->
         marker_id = l.user + l.description
       # if not _.contains(_.map(@markers, (m) -> m.id), marker_id)
       icon = L.icon
-        iconUrl: '/logo.png'
+        iconUrl: '/icons/' + l.type + '.png'
         iconSize: [ 50, 50 ] # size of the icon
         iconAnchor: [ 25, 25 ] # point of the icon which will correspond to marker's location
         popupAnchor: [ 0, -25 ] # point from which the popup should open relative to the iconAnchor
 
       marker = L.marker(l.latlng, { icon: icon }).addTo @map
       marker.id = marker_id
-      text = 'some text'
+      text = '<div id="popup-description">' + l.description + '</div>' + l.type
       marker.bindPopup text
